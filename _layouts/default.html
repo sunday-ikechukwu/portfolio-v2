@@ -61,6 +61,7 @@
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2>Research</h2>
               <br>
+              <br>
               <h3>Publications</h3>
             </td>
           </tr>
@@ -84,7 +85,7 @@
               <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
               <br>
               {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
+              <a href="{{ site.baseurl }}/{{post.paper}}">paper</a> /
               {% endif %}
               {% if post.video %}
               <a href="{{post.video}}">video</a> /
@@ -96,7 +97,7 @@
               <a href="{{post.poster}}">poster</a> /
               {% endif %}
               {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
+              <a href="{{ site.baseurl }}/{{post.slides}}">slides</a> /
               {% endif %}
               {% if post.website %}
               <a href="{{post.website}}">website</a> /
@@ -134,7 +135,7 @@
           {% if cat == 'project' %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              <img src="{{ site.baseurl }}/{{post.image}}" alt="project image" style="width:280px; height:150px; object-fit:cover;" />
             </td>
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{post.title}}</h3>
