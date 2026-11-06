@@ -133,37 +133,65 @@
           {% for cat in post.categories %}
           {% if cat == 'project' %}
           <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="{{ site.baseurl }}/{{post.image}}" alt="project image" style="width:280px; height:150px; object-fit:cover;" />
+            <td style="padding:20px; width:280px; vertical-align:top;">
+              <div style="width:280px; height:150px; overflow:hidden;">
+                <img src="{{ site.baseurl }}/{{post.image}}" alt="project image" style="width:280px; height:150px; object-fit:cover; display:block;" />
+              </div>
             </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              {{post.authors}}
-              <br>
-              {{ post.date | date: "%Y-%m" }}
 
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
-              <p></p>
-              {{ post.excerpt }}
+            <td style="padding:20px; vertical-align:top;">
+              <h3 style="margin-top:0; margin-bottom:6px;">{{ post.title }}</h3>
+          
+              <div style="margin-bottom:6px; font-size:0.95em;">
+                {{ post.authors }}
+              </div>
+
+              <div style="margin-bottom:12px; color:#666; font-size:0.9em;">
+                {{ post.date | date: "%Y-%m" }}
+              </div>
+
+              <!-- Clean link block structure with trail mitigation filters -->
+              <div style="margin-bottom:12px; font-size:0.9em;">
+                {% assign links = "" | split: "," %}
+                
+                {% if post.website %}
+                  <a href="{{ post.website }}">website</a>
+                  {% assign links = links | push: "1" %}
+                {% endif %}
+                
+                {% if post.paper %}
+                  {% if links.size > 0 %} &nbsp;/&nbsp; {% endif %}
+                  <a href="{{ post.paper }}">paper</a>
+                  {% assign links = links | push: "1" %}
+                {% endif %}
+                
+                {% if post.video %}
+                  {% if links.size > 0 %} &nbsp;/&nbsp; {% endif %}
+                  <a href="{{ post.video }}">video</a>
+                  {% assign links = links | push: "1" %}
+                {% endif %}
+                
+                {% if post.code %}
+                  {% if links.size > 0 %} &nbsp;/&nbsp; {% endif %}
+                  <a href="{{ post.code }}">code</a>
+                  {% assign links = links | push: "1" %}
+                {% endif %}
+                
+                {% if post.poster %}
+                  {% if links.size > 0 %} &nbsp;/&nbsp; {% endif %}
+                  <a href="{{ post.poster }}">poster</a>
+                  {% assign links = links | push: "1" %}
+                {% endif %}
+                
+                {% if post.slides %}
+                  {% if links.size > 0 %} &nbsp;/&nbsp; {% endif %}
+                  <a href="{{ post.slides }}">slides</a>
+                {% endif %}
+              </div>
+              
+              <div style="margin:0; line-height:1.5;">
+                {{ post.excerpt }}
+              </div>
             </td>
           </tr>
           {% endif %}
