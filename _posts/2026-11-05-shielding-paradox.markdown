@@ -6,7 +6,7 @@ image: /images/architecture_diagram.png
 categories: publication
 author: "Sunday Ikechukwu"
 authors: "<strong>Sunday Ikechukwu</strong>"
-venue: "International Conference on Artificial Intelligence and Robotics MIRG-ICAIR 2026"
+venue: "International Conference on Artificial Intelligence and Robotics MIRG-ICAIR"
 paper: /pdfs/Paper_93_MIRG_ICAIR_2026_author_proof.pdf
 slides: /pdfs/Shielding_Paradox_MIRG-ICAIR_2026_slides.pdf
 code: https://github.com/sunday-ikechukwu/shielded-autonomy
