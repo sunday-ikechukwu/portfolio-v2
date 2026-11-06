@@ -11,4 +11,3 @@ paper: /pdfs/WJARR-2025-3443.pdf
 slides:
 code:
 ---
-This project presents the design and evaluation of a low-cost, compact Autonomous Vehicle (AV) prototype that uses an ESP32 microcontroller and ultrasonic sensors for obstacle detection and collision avoidance. Both simulation and physical testing validate its responsive modular architecture, aimed at demonstrating that accessible, small-scale autonomous systems can provide a reliable foundation for improving transportation safety and robotics
