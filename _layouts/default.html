@@ -18,7 +18,7 @@
   <meta name="author" content="{{ site.name }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -72,7 +72,7 @@
                 <tr>
                   <!-- Responsive Left Column aligned seamlessly to the top edge -->
                   <td style="padding:20px; width:25%; vertical-align:top; min-width:120px;">
-                    <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="publication preview" style="width:100%; height:auto; max-width:100%; display:block;" />
+                    <img src="/tn{{ post.image }}" alt="publication preview" style="width:100%; height:auto; max-width:100%; display:block;" />
                   </td>
                   
                   <!-- Content Block Column -->
@@ -92,7 +92,7 @@
                       {% assign links = "" | split: "," %}
                       
                       {% if post.paper %}
-                        <a href="{{ site.baseurl }}/{{ post.paper }}">paper</a>
+                        <a href="{{ post.paper }}">paper</a>
                         {% assign links = links | push: "1" %}
                       {% endif %}
                       
@@ -116,7 +116,7 @@
                       
                       {% if post.slides %}
                         {% if links.size > 0 %} &nbsp;/&nbsp; {% endif %}
-                        <a href="{{ site.baseurl }}/{{ post.slides }}">slides</a>
+                        <a href="{{ post.slides }}">slides</a>
                         {% assign links = links | push: "1" %}
                       {% endif %}
                       
@@ -162,7 +162,7 @@
           <tr>
             <td style="padding:20px; width:280px; vertical-align:top;">
               <div style="width:280px; height:150px; overflow:hidden;">
-                <img src="{{ site.baseurl }}/{{post.image}}" alt="project image" style="width:280px; height:150px; object-fit:cover; display:block;" />
+                <img src="{{post.image}}" alt="project image" style="width:280px; height:150px; object-fit:cover; display:block;" />
               </div>
             </td>
 
